@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escola Online - Programação</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="/css/chat.css">
+    <script src="/js/configs.js"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex">
+
+<!-- Sidebar -->
+<aside id="sidebar" class="w-16 md:w-1/6 bg-blue-700 text-white p-2 flex flex-col justify-between hidden md:flex">
+    <div>
+        <h2 class="text-lg font-bold mb-4 text-center">Programação</h2>
+        <ul class="sidebar-chat space-y-1">
+            <!-- Tópico: Lógica de Programação -->
+            <li class="flex flex-col p-2 rounded-md hover:bg-blue-600 cursor-pointer" onclick="toggleSubTopics('logica-programacao')">
+                <div class="flex items-center w-full justify-between">
+                    <div class="flex items-center">
+                        <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/363176-icone-do-de-programacao-gratis-vetor.jpg" alt="Ícone de Tópico" class="w-8 h-8 rounded-full mr-2">
+                        <span class="text-cust text-sm">Lógica de Programação</span>
+                    </div>
+                    <span id="logica-programacao-arrow" class="arrow-down"></span>
+                </div>
+                <ul id="logica-programacao-subtopics" class="ml-10 hidden space-y-1">
+                    <li class="cursor-pointer hover:bg-blue-500 p-1 rounded-md" onclick="selectTopic('Lógica de Programação: Estruturas Condicionais')">Estruturas Condicionais</li>
+                    <li class="cursor-pointer hover:bg-blue-500 p-1 rounded-md" onclick="selectTopic('Lógica de Programação: Laços de Repetição')">Laços de Repetição</li>
+                    <li class="cursor-pointer hover:bg-blue-500 p-1 rounded-md" onclick="selectTopic('Lógica de Programação: Funções e Procedimentos')">Funções e Procedimentos</li>
+                </ul>
+            </li>
+
+            <!-- Tópico: Linguagens de Programação -->
+            <li class="flex flex-col p-2 rounded-md hover:bg-blue-600 cursor-pointer" onclick="toggleSubTopics('linguagens-programacao')">
+                <div class="flex items-center w-full justify-between">
+                    <div class="flex items-center">
+                        <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/363176-icone-do-de-programacao-gratis-vetor.jpg" alt="Ícone de Tópico" class="w-8 h-8 rounded-full mr-2">
+                        <span class="text-cust text-sm">Linguagens de Programação</span>
+                    </div>
+                    <span id="linguagens-programacao-arrow" class="arrow-down"></span>
+                </div>
+                <ul id="linguagens-programacao-subtopics" class="ml-10 hidden space-y-1">
+                    <li class="cursor-pointer hover:bg-blue-500 p-1 rounded-md" onclick="selectTopic('Linguagens de Programação: Python e JavaScript')">Python e JavaScript</li>
+                    <li class="cursor-pointer hover:bg-blue-500 p-1 rounded-md" onclick="selectTopic('Linguagens de Programação: Java e C#')">Java e C#</li>
+                    <li class="cursor-pointer hover:bg-blue-500 p-1 rounded-md" onclick="selectTopic('Linguagens de Programação: C e C++')">C e C++</li>
+                </ul>
+            </li>
+
+            <!-- Tópico: Desenvolvimento Web -->
+            <li class="flex flex-col p-2 rounded-md hover:bg-blue-600 cursor-pointer" onclick="toggleSubTopics('desenvolvimento-web')">
+                <div class="flex items-center w-full justify-between">
+                    <div class="flex items-center">
+                        <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/363176-icone-do-de-programacao-gratis-vetor.jpg" alt="Ícone de Tópico" class="w-8 h-8 rounded-full mr-2">
+                        <span class="text-cust text-sm">Desenvolvimento Web</span>
+                    </div>
+                    <span id="desenvolvimento-web-arrow" class="arrow-down"></span>
+                </div>
+                <ul id="desenvolvimento-web-subtopics" class="ml-10 hidden space-y-1">
+                    <li class="cursor-pointer hover:bg-blue-500 p-1 rounded-md" onclick="selectTopic('Desenvolvimento Web: HTML e CSS')">HTML e CSS</li>
+                    <li class="cursor-pointer hover:bg-blue-500 p-1 rounded-md" onclick="selectTopic('Desenvolvimento Web: JavaScript e React')">JavaScript e React</li>
+                    <li class="cursor-pointer hover:bg-blue-500 p-1 rounded-md" onclick="selectTopic('Desenvolvimento Web: Backend com Node.js')">Backend com Node.js</li>
+                </ul>
+            </li>
+
+            <!-- Tópico: Banco de Dados -->
+            <li class="flex flex-col p-2 rounded-md hover:bg-blue-600 cursor-pointer" onclick="toggleSubTopics('banco-dados')">
+                <div class="flex items-center w-full justify-between">
+                    <div class="flex items-center">
+                        <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/363176-icone-do-de-programacao-gratis-vetor.jpg" alt="Ícone de Tópico" class="w-8 h-8 rounded-full mr-2">
+                        <span class="text-cust text-sm">Banco de Dados</span>
+                    </div>
+                    <span id="banco-dados-arrow" class="arrow-down"></span>
+                </div>
+                <ul id="banco-dados-subtopics" class="ml-10 hidden space-y-1">
+                    <li class="cursor-pointer hover:bg-blue-500 p-1 rounded-md" onclick="selectTopic('Banco de Dados: SQL e NoSQL')">SQL e NoSQL</li>
+                    <li class="cursor-pointer hover:bg-blue-500 p-1 rounded-md" onclick="selectTopic('Banco de Dados: Modelagem de Dados')">Modelagem de Dados</li>
+                    <li class="cursor-pointer hover:bg-blue-500 p-1 rounded-md" onclick="selectTopic('Banco de Dados: Otimização e Performance')">Otimização e Performance</li>
+                </ul>
+            </li>
+
+            <!-- Tópico: Programação Mobile -->
+            <li class="flex flex-col p-2 rounded-md hover:bg-blue-600 cursor-pointer" onclick="toggleSubTopics('programacao-mobile')">
+                <div class="flex items-center w-full justify-between">
+                    <div class="flex items-center">
+                        <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/363176-icone-do-de-programacao-gratis-vetor.jpg" alt="Ícone de Tópico" class="w-8 h-8 rounded-full mr-2">
+                        <span class="text-cust text-sm">Programação Mobile</span>
+                    </div>
+                    <span id="programacao-mobile-arrow" class="arrow-down"></span>
+                </div>
+                <ul id="programacao-mobile-subtopics" class="ml-10 hidden space-y-1">
+                    <li class="cursor-pointer hover:bg-blue-500 p-1 rounded-md" onclick="selectTopic('Programação Mobile: Android com Java')">Android com Java</li>
+                    <li class="cursor-pointer hover:bg-blue-500 p-1 rounded-md" onclick="selectTopic('Programação Mobile: iOS com Swift')">iOS com Swift</li>
+                    <li class="cursor-pointer hover:bg-blue-500 p-1 rounded-md" onclick="selectTopic('Programação Mobile: Apps Híbridos com Flutter')">Apps Híbridos com Flutter</li>
+                </ul>
+            </li>
+
+            <!-- Tópico: Inteligência Artificial -->
+            <li class="flex flex-col p-2 rounded-md hover:bg-blue-600 cursor-pointer" onclick="toggleSubTopics('inteligencia-artificial')">
+                <div class="flex items-center w-full justify-between">
+                    <div class="flex items-center">
+                        <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/363176-icone-do-de-programacao-gratis-vetor.jpg" alt="Ícone de Tópico" class="w-8 h-8 rounded-full mr-2">
+                        <span class="text-cust text-sm">Inteligência Artificial</span>
+                    </div>
+                    <span id="inteligencia-artificial-arrow" class="arrow-down"></span>
+                </div>
+                <ul id="inteligencia-artificial-subtopics" class="ml-10 hidden space-y-1">
+                    <li class="cursor-pointer hover:bg-blue-500 p-1 rounded-md" onclick="selectTopic('Inteligência Artificial: Machine Learning')">Machine Learning</li>
+                    <li class="cursor-pointer hover:bg-blue-500 p-1 rounded-md" onclick="selectTopic('Inteligência Artificial: Redes Neurais')">Redes Neurais</li>
+                    <li class="cursor-pointer hover:bg-blue-500 p-1 rounded-md" onclick="selectTopic('Inteligência Artificial: Processamento de Linguagem Natural')">Processamento de Linguagem Natural</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <footer class="text-center">
+        <p class="text-xs">&copy; 2024 Escola Online</p>
+    </footer>
+</aside>
+
+<!-- Main Content -->
+<main class="flex-grow flex flex-col p-8">
+    <!-- Header -->
+    <header class="flex justify-between items-center mb-8">
+        <div class="flex items-center space-x-4">
+            <button class="md:hidden text-2xl text-blue-700" onclick="toggleSidebar()">
+                <i class="fas fa-ellipsis-h"></i>
+            </button>
+            <i class="fas fa-cog text-2xl text-blue-700 cursor-pointer" onclick="toggleConfigWindow()"></i>
+            <img id="profile-pic-display" src="https://placehold.co/50x50" alt="Foto de Perfil" class="img-profile">
+            <i class="fas fa-envelope text-2xl text-blue-700"></i>
+        </div>
+        <div class="progress-bar-container">
+            <div class="progress-bar"></div>
+            <span class="progress-text">1º Bimestre</span>
+        </div>
+    </header>
+
+<!-- Área de Conversa -->
+<div id="chat-container" class="chat-container">
+    <div class="chat-message">
+        <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/363176-icone-do-de-programacao-gratis-vetor.jpg" alt="Foto de Perfil">
+        <p class="user-message">Olá! Seja bem-vindo à matéria de Programação, escolha um subtópico para começar!</p>
+    </div>
+</div>
+
+<!-- Input de Mensagem -->
+<div class="message-input-container">
+    <input id="message-input" type="text" placeholder="Digite sua mensagem...">
+    <i class="fas fa-microphone"></i>
+    <button onclick="sendMessage()">
+        <i class="fas fa-paper-plane"></i>
+    </button>
+</div>
+
+<!-- Janela de Configuração -->
+<div id="config-window" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-8 rounded-lg shadow-lg relative">
+        <button class="absolute top-4 right-4 text-gray-500 hover:text-gray-700" onclick="toggleConfigWindow()">
+            <i class="fas fa-times"></i>
+        </button>
+        <h2 class="text-2xl font-bold mb-6">Configurações</h2>
+        <form id="config-form" enctype="multipart/form-data">
+            <div class="mb-4">
+                <label for="profile-pic" class="block text-sm font-medium text-gray-700">Trocar Foto</label>
+                <input type="file" id="profile-pic" name="profile_pic" class="mt-1 p-2 border rounded-md w-full">
+            </div>
+            <div class="mb-4">
+                <label for="name" class="block text-sm font-medium text-gray-700">Nome</label>
+                <input type="text" id="name" name="name" class="mt-1 p-2 border rounded-md w-full" placeholder="Seu Nome">
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                <input type="email" id="email" name="email" class="mt-1 p-2 border rounded-md w-full" placeholder="seuemail@exemplo.com" readonly>
+            </div>
+            <div class="mb-4">
+                <label for="rua" class="block text-sm font-medium text-gray-700">Endereço</label>
+                <input type="text" id="rua" name="rua" class="mt-1 p-2 border rounded-md w-full" placeholder="Rua">
+            </div>
+            <div class="mb-4">
+                <input type="text" id="bairro" name="bairro" class="mt-1 p-2 border rounded-md w-full" placeholder="Bairro">
+            </div>
+            <div class="mb-4">
+                <input type="text" id="cidade" name="cidade" class="mt-1 p-2 border rounded-md w-full" placeholder="Cidade">
+            </div>
+            <div class="mb-4">
+                <input type="text" id="estado" name="estado" class="mt-1 p-2 border rounded-md w-full" placeholder="Estado">
+            </div>
+            <div class="mb-4">
+                <input type="text" id="cep" name="cep" class="mt-1 p-2 border rounded-md w-full" placeholder="CEP">
+            </div>
+            <button type="submit" class="w-full bg-blue-700 text-white py-2 rounded-md hover:bg-blue-800">Salvar</button>
+        </form>
+    </div>
+</div>
+
+<script>
+
+async function sendMessage() {
+    const messageInput = document.getElementById('message-input');
+    const messageText = messageInput.value.trim();
+
+    if (messageText === '') return;
+
+    
+    addUserMessageToChat(messageText);
+
+    
+    const subtopic = activeSubtopic;
+
+    
+    if (!subtopic) {
+        console.error('Subtópico não selecionado.');
+        alert('Por favor, selecione um subtópico antes de enviar a mensagem.');
+        return;
+    }
+
+    
+    try {
+        const response = await fetch('/enviar-mensagem-progr', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ message: messageText, subtopic: subtopic })
+        });
+
+        const data = await response.json();
+        displayIaMessage(data.message); 
+    } catch (error) {
+        console.error('Erro ao enviar a mensagem:', error);
+    }
+
+    
+    messageInput.value = '';
+}
+
+
+let activeSubtopic = '';
+
+// Função para alternar a visibilidade dos subtópicos
+function toggleSubTopics(id) {
+    const subTopics = document.getElementById(id + '-subtopics');
+    const arrow = document.getElementById(id + '-arrow');
+    subTopics.classList.toggle('hidden');
+    arrow.classList.toggle('arrow-up');
+}
+
+// Função para selecionar um subtópico e definir o subtópico ativo
+function selectTopic(subtopicName) {
+    // Remove a classe 'active-subtopic' de todos os subtópicos
+    document.querySelectorAll('#sidebar ul li ul li').forEach(sub => sub.classList.remove('active-subtopic'));
+
+    
+    const subtopicElements = [...document.querySelectorAll('#sidebar ul li ul li')];
+    const selectedSubtopic = subtopicElements.find(sub => sub.textContent.trim() === subtopicName.trim());
+
+    if (selectedSubtopic) {
+        selectedSubtopic.classList.add('active-subtopic');
+    }
+
+    
+    activeSubtopic = subtopicName;
+
+    
+    const chatContainer = document.getElementById('chat-container');
+    chatContainer.innerHTML = ''; // Limpa o chat anterior
+    const welcomeMessage = document.createElement('div');
+    welcomeMessage.classList.add('chat-message');
+    welcomeMessage.innerHTML = `<img src="https://static.vecteezy.com/ti/vetor-gratis/p1/363176-icone-do-de-programacao-gratis-vetor.jpg" alt="Foto de Perfil"><p class="user-message">Você está no subtópico: ${subtopicName}</p>`;
+    chatContainer.appendChild(welcomeMessage);
+}
+
+
+function addUserMessageToChat(messageText) {
+    const chatContainer = document.getElementById('chat-container');
+
+    
+    const userMessageDiv = document.createElement('div');
+    userMessageDiv.classList.add('chat-message', 'sent-message', 'text-right');
+
+    const messageContent = document.createElement('div');
+    messageContent.classList.add('flex', 'items-center', 'justify-end');
+
+    const messageParagraph = document.createElement('p');
+    messageParagraph.classList.add('user-message', 'bg-blue-600', 'text-white', 'p-2', 'rounded-lg', 'inline-block', 'max-w-xs', 'mr-2');
+    messageParagraph.textContent = messageText;
+
+    const profileImg = document.createElement('img');
+    profileImg.src = document.getElementById('profile-pic-display').src;
+    profileImg.alt = 'Foto de Perfil';
+    profileImg.classList.add('w-8', 'h-8', 'rounded-full');
+
+    
+    messageContent.appendChild(messageParagraph);
+    messageContent.appendChild(profileImg);
+    userMessageDiv.appendChild(messageContent);
+
+    
+    chatContainer.appendChild(userMessageDiv);
+
+    
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+}
+
+
+function displayIaMessage(iaMessage) {
+    const chatContainer = document.getElementById('chat-container');
+
+    
+    const iaMessageDiv = document.createElement('div');
+    iaMessageDiv.classList.add('chat-message', 'received-message');
+
+    const iaMessageContent = document.createElement('div');
+    iaMessageContent.classList.add('flex', 'items-center', 'justify-start'); 
+
+    const iaMessageParagraph = document.createElement('p');
+    iaMessageParagraph.classList.add('ia-message', 'bg-gray-200', 'text-black', 'p-2', 'rounded-lg', 'inline-block', 'max-w-xs', 'ml-2');
+    iaMessageParagraph.textContent = iaMessage;
+
+    const iaProfileImg = document.createElement('img');
+    iaProfileImg.src = 'https://static.vecteezy.com/ti/vetor-gratis/p1/363176-icone-do-de-programacao-gratis-vetor.jpg'; // URL da imagem de perfil da IA
+    iaProfileImg.alt = 'Foto de Perfil da IA';
+    iaProfileImg.classList.add('w-8', 'h-8', 'rounded-full', 'mr-2');
+
+    
+    iaMessageContent.appendChild(iaProfileImg);
+    iaMessageContent.appendChild(iaMessageParagraph);
+    iaMessageDiv.appendChild(iaMessageContent);
+
+    
+    chatContainer.appendChild(iaMessageDiv);
+
+    
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+}
+
+
+async function loadUserProfile() {
+    const response = await fetch('/getProfile');
+    const user = await response.json();
+    document.getElementById('name').value = user.name;
+    document.getElementById('email').value = user.email;
+    document.getElementById('rua').value = user.rua;
+    document.getElementById('bairro').value = user.bairro;
+    document.getElementById('cidade').value = user.cidade;
+    document.getElementById('estado').value = user.estado;
+    document.getElementById('cep').value = user.cep;
+    document.getElementById('profile-pic-display').src = user.profile_pic;
+}
+
+
+window.onload = loadUserProfile;
+</script>
+</body>
+</html>

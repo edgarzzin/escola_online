@@ -1,0 +1,252 @@
+.bg-custom {
+    background-color: #00c3ff;
+}
+
+#sidebar {
+    height: 100vh; /* Mantém o sidebar com a altura total da viewport */
+    max-height: 100vh; /* Define uma altura máxima para o sidebar */
+    overflow-y: auto; /* Adiciona rolagem vertical quando o conteúdo é maior que a altura */
+    overflow-x: hidden; /* Esconde rolagem horizontal desnecessária */
+    position: sticky; /* Mantém o sidebar fixo durante o scroll */
+    top: 0; /* Fixa o topo do sidebar para ficar no topo da página */
+}
+
+
+.border-custom {
+    border-color: #00c3ff;
+}
+.text-custom {
+    color: #00c3ff;
+}
+.text-cust {
+    color: #ffffff;
+}
+.img-profile {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+/* Estilização do Sidebar */
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Sidebar ocupa toda a altura da tela */
+    max-height: 100vh; /* Impede que o sidebar ultrapasse a altura da tela */
+    overflow-y: auto; /* Permite rolagem interna sem alterar o tamanho do sidebar */
+    overflow-x: hidden; /* Remove rolagem horizontal desnecessária */
+    flex-shrink: 0; /* Impede que o sidebar diminua ao interagir com o conteúdo do chat */
+    position: sticky; /* Mantém o sidebar fixo no lado da tela durante o scroll */
+    top: 0; /* Fixa o topo do sidebar */
+    padding-bottom: 1rem; /* Adiciona espaço ao final do sidebar para um layout confortável */
+}
+
+/* Estilização do Main Content */
+main {
+    flex: 1; /* Permite que o conteúdo principal cresça para preencher o espaço restante */
+    overflow-y: auto; /* Adiciona rolagem ao conteúdo principal sem afetar o sidebar */
+}
+
+/* Estilização da Área de Chat */
+.chat-container {
+    flex: 1;
+    overflow-y: auto;
+    max-height: calc(100vh - 150px); /* Ajuste conforme necessário para a altura do header e footer */
+}
+
+.chat-message {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+.chat-message img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+.chat-message p {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    max-width: 50%;
+    word-wrap: break-word;
+}
+.chat-message .user-message {
+    background-color: #e5e7eb;
+}
+.chat-message .my-message {
+    background-color: #d1fae5;
+    margin-left: auto;
+    order: 2;
+}
+.message-input-container {
+    display: flex;
+    align-items: center;
+    border: 2px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    background-color: white;
+}
+.message-input-container input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+.message-input-container button, .message-input-container i {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    font-size: 1.5rem;
+    color: #4b5563;
+}
+.message-input-container button:hover, .message-input-container i:hover {
+    color: #1d4ed8;
+}
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid white;
+    transition: transform 0.3s ease;
+}
+
+.arrow-up {
+    transform: rotate(180deg);
+}
+
+#sidebar ul ul {
+    padding-left: 20px;
+}
+
+#sidebar ul ul li {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    transition: background-color 0.2s;
+}
+
+#sidebar ul ul li:hover {
+    background-color: #2563eb; /* Ajuste a cor conforme necessário */
+}
+
+#sidebar li {
+position: relative;
+}
+
+#sidebar li > div {
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 100%;
+}
+
+#sidebar ul ul li {
+padding-left: 20px;
+font-size: 14px;
+}
+
+#sidebar ul ul {
+padding-left: 0;
+list-style: none;
+}
+
+#sidebar ul ul li {
+background-color: #3b82f6;
+border-radius: 4px;
+}
+.chat-container {
+flex-grow: 1; /* Permite que o container de chat cresça para ocupar o espaço disponível */
+overflow-y: auto;
+border: 1px solid #e5e7eb;
+border-radius: 0.5rem;
+padding: 1rem;
+background-color: #f9fafb;
+margin-bottom: 0; /* Remove a margem inferior */
+}
+.chat-message {
+display: flex;
+align-items: flex-start;
+margin-bottom: 1rem;
+}
+
+.chat-message .my-message {
+background-color: #d1fae5;
+margin-left: auto;
+order: 2; /* Alinha as mensagens do usuário à direita */
+}
+
+.chat-message .user-message {
+background-color: #e5e7eb;
+margin-right: auto;
+order: 1; /* Alinha as mensagens de outros usuários à esquerda */
+}
+.message-input-container {
+display: flex;
+align-items: center;
+border: 2px solid #e5e7eb;
+border-radius: 0.5rem;
+padding: 0.5rem;
+background-color: white;
+margin-top: 1rem;
+}
+
+.message-input-container input {
+flex-grow: 1;
+border: none;
+outline: none;
+padding: 0.5rem;
+font-size: 1rem;
+}
+
+main {
+display: flex;
+flex-direction: column;
+height: 100vh;
+}
+.progress-bar-container {
+    width: 150px;
+    height: 20px;
+    background-color: #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.progress-bar {
+    height: 100%;
+    width: 50%;
+    background-color: #1d4ed8;
+    border-radius: 10px 0 0 10px;
+    transition: width 0.3s ease;
+}
+.progress-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 0.75rem;
+    color: white;
+}
+
+.sent-message {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.sent-message .user-message {
+    background-color: #3B82F6; /* Azul padrão do Tailwind */
+    color: white;
+}
+
+.sent-message .flex {
+    flex-direction: row-reverse; /* Imagem à direita do texto */
+}
+
+.chat-message img {
+    margin-left: 10px;
+}

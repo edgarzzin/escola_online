@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página da Escola</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./css/in.css">
+</head>
+<body class="relative bg-gray-900 text-white">
+    <header class="navbar" id="navbar">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-white">Estância Paraiso</h1>
+            <ul>
+                <li class="relative group inline-block">
+                    <a href="#">Menu <i class="fas fa-caret-down"></i></a>
+                    
+                    <div class="absolute dropdown-content bg-black text-white shadow-md py-2 w-48">
+                        <a href="#" class="hover:bg-gray-800">Sobre</a>
+                        <a href="#" class="hover:bg-gray-800">Cursos</a>
+                        <a href="#" class="hover:bg-gray-800">Contato</a>
+                    </div>
+                </li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Eventos</a></li>
+            </ul>
+            <div class="space-x-4">
+                <a href="/login" class="btn-login">Login</a>
+                <a href="/cadastro" class="btn-cadastro">Cadastro</a>                
+            </div>
+        </div>
+    </header>
+    <section id="slider" class="relative">
+        <div id="image1" class="bg-img visible" style="background-image: url('https://i.imgur.com/nHTUWxp.png');"></div>
+        <div id="image2" class="bg-img" style="background-image: url('https://i.imgur.com/3T46LPW.png');"></div>
+        <div id="image3" class="bg-img" style="background-image: url('https://i.imgur.com/Q2XB6LT.png');"></div>
+        <div id="image4" class="bg-img" style="background-image: url('https://i.imgur.com/76fo98u.png');"></div>
+
+        <div class="flex justify-center items-center h-screen">
+            <div class="text-center space-y-6 fade-in">
+                <h2 class="text-4xl font-bold text-shadow">Bem-vindo à Nossa Escola</h2>
+                <p class="text-lg text-shadow">Onde a tecnologia encontra a educação.</p>
+            </div>
+        </div>
+    </section>
+<main class="bg-gray-900 py-20">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-6 fade-in">O que você pode estudar?</h2>
+        <p class="text-lg mb-6 fade-in">Tudo via Web, Onde a tecnologia se encontra com a Educação</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-gray-800 p-6 rounded shadow-lg hover:bg-gray-700 transition fade-in">
+                <h3 class="text-2xl font-bold mb-2">Português</h3>
+                <p>Aprenda os fundamentos do português.</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded shadow-lg hover:bg-gray-700 transition fade-in">
+                <h3 class="text-2xl font-bold mb-2">Matemática</h3>
+                <p>Aprenda os fundamentos de matemática.</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded shadow-lg hover:bg-gray-700 transition fade-in">
+                <h3 class="text-2xl font-bold mb-2">Ciências Naturais</h3>
+                <p>Descubra a beleza da natureza.</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded shadow-lg hover:bg-gray-700 transition fade-in">
+                <h3 class="text-2xl font-bold mb-2">História Mundial</h3>
+                <p>Explore a história global.</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded shadow-lg hover:bg-gray-700 transition fade-in">
+                <h3 class="text-2xl font-bold mb-2">Geografia</h3>
+                <p>Descubra nosso mundo.</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded shadow-lg hover:bg-gray-700 transition fade-in">
+                <h3 class="text-2xl font-bold mb-2">Literatura Clássica</h3>
+                <p>Estude obras literárias clássicas.</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded shadow-lg hover:bg-gray-700 transition fade-in">
+                <h3 class="text-2xl font-bold mb-2">Arte e Cultura</h3>
+                <p>Explore a diversidade cultural.</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded shadow-lg hover:bg-gray-700 transition fade-in">
+                <h3 class="text-2xl font-bold mb-2">Educação Física</h3>
+                <p>Aprenda a importância do exercício.</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded shadow-lg hover:bg-gray-700 transition fade-in">
+                <h3 class="text-2xl font-bold mb-2">Tecnologia e Ciência</h3>
+                <p>Entenda avanços tecnológicos.</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded shadow-lg hover:bg-gray-700 transition fade-in">
+                <h3 class="text-2xl font-bold mb-2">Direito Básico</h3>
+                <p>Aprenda sobre os seus direitos.</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded shadow-lg hover:bg-gray-700 transition fade-in">
+                <h3 class="text-2xl font-bold mb-2">Programação Básica</h3>
+                <p>Aprenda os fundamentos da programação.</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded shadow-lg hover:bg-gray-700 transition fade-in">
+                <h3 class="text-2xl font-bold mb-2">Inglês</h3>
+                <p>Desenvolva suas habilidades no inglês.</p>
+            </div>
+        </div>
+    </div>
+</main>
+    <footer class="text-white">
+        <div class="container mx-auto px-6 text-center">
+            <div class="space-y-4">
+                <div class="flex justify-center space-x-6">
+                    <a href="https://github.com/edgarzzin" class="hover:text-gray-400"><i class="fab fa-github text-2xl"></i></a>
+                    <a href="https://x.com/edgarzin_" class="hover:text-gray-400"><i class="fab fa-twitter text-2xl"></i></a>
+                    <a href="https://instagram.com/edgarzzin" class="hover:text-gray-400"><i class="fab fa-instagram text-2xl"></i></a>
+                </div>
+                <p>&copy; por Edgar.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+       
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('.bg-img');
+        setInterval(() => {
+            images[currentImageIndex].classList.remove('visible');
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            images[currentImageIndex].classList.add('visible');
+        }, 5000);
+
+        
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Alteração na navbar ao rolar a página
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        function handleResize() {
+    const h1 = document.querySelector('header h1');
+    const blogItem = document.querySelector('header li:nth-child(2)'); 
+    const eventosItem = document.querySelector('header li:nth-child(3)'); 
+
+    if (window.innerWidth < 720) {
+        h1.classList.add('hidden');
+        blogItem.classList.add('hidden'); 
+        eventosItem.classList.add('hidden'); 
+    } else {
+        h1.classList.remove('hidden');
+        blogItem.classList.remove('hidden'); 
+        eventosItem.classList.remove('hidden'); 
+    }
+}
+
+
+handleResize();
+window.addEventListener('resize', handleResize);
+window.addEventListener('resize', handleResize);
+handleResize();
+
+    </script>
+</body>
+</html>

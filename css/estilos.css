@@ -1,0 +1,346 @@
+/* Adicionando fontes profissionais e elegantes */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Roboto+Slab:wght@400;700&family=Source+Sans+Pro:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@600&display=swap');
+
+
+
+/* Limitação de imagem */
+.limited-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover; /* Ajusta a imagem ao contêiner, cortando se necessário */
+    border-radius: 50%; /* Mantém a imagem redonda */
+}
+
+/* Estilo da barra lateral de chat */
+.sidebar-chat {
+    max-height: 70vh; /* Limita a altura da lista de tópicos */
+    overflow-y: auto; /* Adiciona rolagem se necessário */
+}
+
+.rubik-uniquifier {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
+
+.sidebar-chat li {
+    cursor: pointer;
+    white-space: nowrap; /* Evita quebra de linha */
+    overflow: hidden; /* Esconde o texto que ultrapassar o contêiner */
+    text-overflow: ellipsis; /* Adiciona reticências para textos longos */
+}
+.sidebar-chat li:hover {
+    background-color: #00c3ff;
+}
+
+/* SING UP STYLE */
+.bg-custom {
+    background: linear-gradient(135deg, #cecece 0%, #ffffff 100%);
+}
+
+/* Efeito de foco nos campos de entrada */
+.input-focus {
+    border: 2px solid #00c3ff; /* Cor azul com borda */
+    box-shadow: 0 0 10px #00c3ff; /* Sombra */
+}
+
+/* LOGIN STYLE */
+ /* Background personalizado com gradiente */
+.bg-custom {
+}
+.input-focus {
+    border: 2px solid rgb(74, 92, 219); /* Cor azul com borda */
+    box-shadow: 0 0 10px rgba(74, 92, 219, 0.5); /* Sombra */
+}
+
+/* PAGE IN INICIAL */
+.bg-img {
+    background-size: cover;
+    background-position: center;
+    height: 110vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+.bg-img.visible {
+    opacity: 1;
+}
+
+/* Estilo para rolagem suave */
+html {
+    scroll-behavior: smooth;
+    background-color: #000000;
+}
+
+body {
+    scroll-behavior: smooth;
+    background-color: #000000;
+}
+
+/* Animação de fade-in para elementos */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Botões estilizados com efeito hover */
+.btn-hover {
+    transition: transform 0.3s ease-in-out;
+}
+.btn-hover:hover {
+    transform: scale(1.1);
+}
+
+/* Customização para o navbar */
+.navbar {
+    background: linear-gradient(90deg, #00c3ff 0%, rgba(13,81,122,1) 100%);
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    transition: background 0.5s ease;
+}
+
+.navbar.scrolled {
+    background: #00a0d0;
+    backdrop-filter: blur(10px);
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+.navbar li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar li a:hover {
+    color: #63b3ed;
+}
+
+.navbar li a::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #63b3ed;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar li a:hover::before {
+    visibility: visible;
+    width: 100%;
+}
+
+/* Animação suave para o dropdown */
+.dropdown-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 12px;
+    border-color: #00a0d0;
+    border-right-color: #00a0d0;
+}
+
+.group:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Botão de login/cadastro com efeito gradiente e hover mais moderno */
+.btn-login, .btn-cadastro {
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-login {
+    background: linear-gradient(90deg, rgba(66, 153, 225, 1) 0%, rgba(99, 179, 237, 1) 100%);
+    color: white;
+}
+
+.btn-login:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(66, 153, 225, 0.4);
+}
+
+.btn-cadastro {
+    background: linear-gradient(90deg, rgba(56, 193, 114, 1) 0%, rgba(85, 232, 147, 1) 100%);
+    color: white;
+}
+
+.btn-cadastro:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(56, 193, 114, 0.4);
+}
+
+.text-center {
+    /* Define o alinhamento central para o texto */
+    text-align: center;
+}
+
+.text-4xl {
+    /* Tamanho da fonte para o título */
+    font-size: 2.5rem; /* Ajuste conforme necessário */
+}
+
+.font-bold {
+    /* Define a fonte em negrito para o título */
+    font-weight: bold;
+}
+
+.text-lg {
+    /* Tamanho da fonte para o parágrafo */
+    font-size: 1.125rem; /* Ajuste conforme necessário */
+}
+
+/* Estilo para o contorno preto e sombra */
+.highlight-text {
+    color: white; /* Cor do texto (branco) */
+    background-color: black; /* Cor de fundo (preto) */
+    padding: 10px; /* Espaçamento interno para destacar o texto */
+    border: 2px solid black; /* Contorno preto */
+    box-shadow: 0 12px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.937); /* Ajuste o valor conforme necessário */
+}
+
+.text-shadow {
+    position: relative;
+    color: rgba(255, 255, 255, 0.85); /* Um tom de cinza claro */
+}
+
+.text-shadow::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: black; /* Cor do contorno */
+    z-index: -1;
+    transform: translate(-2px, -2px); /* Ajusta a posição do contorno */
+    white-space: nowrap;
+}
+
+/* Estilo para h1 */
+        /* Títulos das Matérias */
+h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600; /* SemiBold */
+    letter-spacing: -0.5px; /* Letras mais próximas */
+}
+
+        /* Texto do Parágrafo */
+        p {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400; /* Light */
+            letter-spacing: 0px;
+            color: #ffffff;
+
+        }
+
+        /* Tópicos do Sidebar */
+        .sidebar-chat span {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400; /* Regular */
+            letter-spacing: -0.3px; /* Letras mais próximas */
+            color: #ffffff;
+        }
+
+
+                /* Estilo Rubik para títulos das matérias */
+        .rubik-unique {
+            font-family: "Rubik", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 554;
+            font-style: normal;
+        }
+
+p::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: black; /* Cor do contorno */
+    z-index: -1;
+    transform: translate(-2px, -2px); /* Ajuste a posição do contorno */
+    white-space: nowrap;
+}
+
+/* Estilo para botões */
+button {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    color: white;
+    background-color: #00c3ff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0077a1;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Títulos das Matérias */
+.rubik-uniquifier {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600; /* Usar um peso mais consistente */
+    font-style: normal;
+    text-transform: uppercase; /* Deixa os títulos em letras maiúsculas para um visual mais impactante */
+    letter-spacing: 0.5px; /* Melhora a legibilidade e o espaçamento entre letras */
+    color: #333333; /* Um tom de cinza escuro elegante */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra para destacar o texto */
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Transições suaves ao interagir com o texto */
+}
+
+.rubik-uniquifier:hover {
+    color: #0073e6; /* Cor de destaque ao passar o mouse */
+    text-shadow: 2px 2px 4px rgba(0, 115, 230, 0.2); /* Aumenta a sombra no hover para um efeito mais intenso */
+}

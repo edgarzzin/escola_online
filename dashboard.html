@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escola Online</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <script src="./js/configs.js"></script>
+    <style>
+        .bg-custom {
+            background-color: #00c3ff;
+        }
+        .border-custom {
+            border-color: #00c3ff;
+        }
+        .text-custom {
+            color: #00c3ff;
+        }
+        .text-cust {
+            color: #ffffff;
+        }
+        .img-profile {
+    width: 50px;
+    height: 50px;
+    object-fit: cover; /* Garante que a imagem se ajuste dentro do espaço */
+    border-radius: 50%; /* Faz a imagem ficar redonda */
+}
+
+    </style>
+</head>
+<body class="bg-black-100 min-h-screen flex">
+
+
+<!-- Main Content -->
+<main class="flex-grow bg-white p-8">
+    <!-- Header -->
+    <header class="flex justify-between items-center mb-8">
+        <div class="flex items-center space-x-4">
+            <button class="md:hidden text-2xl text-blue-700" onclick="toggleSidebar()">
+                <i class="fas fa-ellipsis-h"></i>
+            </button>
+            <i class="fas fa-cog text-2xl text-blue-700 cursor-pointer" onclick="toggleConfigWindow()"></i>
+            <img id="profile-pic-display" src="https://placehold.co/50x50" alt="Foto de Perfil" class="img-profile">
+
+            <i class="fas fa-envelope text-2xl text-blue-700"></i>
+        </div>
+    </header>
+
+    <!-- Janela de Configuração -->
+    <div id="config-window" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-8 rounded-lg shadow-lg relative">
+            <button class="absolute top-4 right-4 text-gray-500 hover:text-gray-700" onclick="toggleConfigWindow()">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 class="text-2xl font-bold mb-6">Configurações</h2>
+            <form id="config-form" enctype="multipart/form-data">
+                <div class="mb-4">
+                    <label for="profile-pic" class="block text-sm font-medium text-gray-700">Trocar Foto</label>
+                    <input type="file" id="profile-pic" name="profile_pic" class="mt-1 p-2 border rounded-md w-full">
+                </div>
+                <div class="mb-4">
+                    <label for="name" class="block text-sm font-medium text-gray-700">Nome</label>
+                    <input type="text" id="name" name="name" class="mt-1 p-2 border rounded-md w-full" placeholder="Seu Nome">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" id="email" name="email" class="mt-1 p-2 border rounded-md w-full" placeholder="seuemail@exemplo.com" readonly>
+                </div>
+                <div class="mb-4">
+                    <label for="rua" class="block text-sm font-medium text-gray-700">Endereço</label>
+                    <input type="text" id="rua" name="rua" class="mt-1 p-2 border rounded-md w-full" placeholder="Rua">
+                </div>
+                <div class="mb-4">
+                    <input type="text" id="bairro" name="bairro" class="mt-1 p-2 border rounded-md w-full" placeholder="Bairro">
+                </div>
+                <div class="mb-4">
+                    <input type="text" id="cidade" name="cidade" class="mt-1 p-2 border rounded-md w-full" placeholder="Cidade">
+                </div>
+                <div class="mb-4">
+                    <input type="text" id="estado" name="estado" class="mt-1 p-2 border rounded-md w-full" placeholder="Estado">
+                </div>
+                <div class="mb-4">
+                    <input type="text" id="cep" name="cep" class="mt-1 p-2 border rounded-md w-full" placeholder="CEP">
+                </div>
+                <button type="submit" class="w-full bg-blue-700 text-white py-2 rounded-md hover:bg-blue-800">Salvar</button>
+            </form>
+        </div>
+    </div>
+    
+
+    <h1 class="text-3xl font-bold text-blue-700">Bem-vindo à Escola Online</h1>
+    
+    <!-- Lista de Matérias -->
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+        <!-- Exemplo de Matéria -->
+        <a href="./Chat/chat.html">
+            <article class="p-4 border-2 border-blue-300 rounded-md shadow-md hover:shadow-lg transition-shadow">
+                <img src="https://cdn-icons-png.flaticon.com/512/197/197386.png" alt="Foto Redonda da Matéria" class="limited-img mx-auto mb-4">
+                <h3 class="rubik-uniquifier text-xl font-bold text-center mb-2">Português Básico</h3>
+                <p class="text-center text-gray-600">Aprenda os fundamentos do português.</p>
+            </article>
+        </a>        
+        <a href="./Chat/chat-mat.html">
+            <article class="p-4 border-2 border-blue-300 rounded-md shadow-md hover:shadow-lg transition-shadow">
+                <img src="https://cdn-icons-png.flaticon.com/512/1830/1830989.png" alt="Foto Redonda da Matéria" class="limited-img mx-auto mb-4">
+                <h3 class="rubik-uniquifier text-xl font-bold text-center mb-2">Matemática Básica</h3>
+                <p class="text-center text-gray-600">Aprenda os fundamentos de matemática.</p>
+            </article>
+        </a>        
+        <a href="./Chat/chat-cien.html">
+            <article class="p-4 border-2 border-blue-300 rounded-md shadow-md hover:shadow-lg transition-shadow">
+                <img src="https://cdn-icons-png.flaticon.com/512/5205/5205074.png" alt="Foto Redonda da Matéria" class="limited-img mx-auto mb-4">
+                <h3 class="rubik-uniquifier text-xl font-bold text-center mb-2">Ciências Naturais</h3>
+                <p class="text-center text-gray-600">Descubra a beleza da natureza.</p>
+            </article>
+        </a>        
+        <a href="./Chat/chat.his.html">
+            <article class="p-4 border-2 border-blue-300 rounded-md shadow-md hover:shadow-lg transition-shadow">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlxKLrvhKAVZ74oCnYg1ydk_IbVVl2fUkLNQ&s.png" alt="Foto Redonda da Matéria" class="limited-img mx-auto mb-4">
+                <h3 class="rubik-uniquifier text-xl font-bold text-center mb-2">História Mundial</h3>
+                <p class="text-center text-gray-600">Explore a história global.</p>
+            </article>
+        </a>        
+        <a href="./Chat/chat-geo.html">
+            <article class="p-4 border-2 border-blue-300 rounded-md shadow-md hover:shadow-lg transition-shadow">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC5VBz5_KPBPO5tmfcJ4a2wnMlLNv4Uw9iGg&s.png" alt="Foto Redonda da Matéria" class="limited-img mx-auto mb-4">
+                <h3 class="rubik-uniquifier text-xl font-bold text-center mb-2">Geografia Básica</h3>
+                <p class="text-center text-gray-600">Descubra nosso mundo.</p>
+            </article>
+        </a>        
+        <a href="./Chat/chat-lit.html" class="block">
+            <article class="p-4 border-2 border-blue-300 rounded-md shadow-md hover:shadow-lg transition-shadow">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAYKuEGW3-5uyVTqRlmczCcYzhxTR--JVQnA&s.png" alt="Foto Redonda da Matéria" class="limited-img mx-auto mb-4">
+                <h3 class="rubik-uniquifier text-xl font-bold text-center mb-2">Literatura Clássica</h3>
+                <p class="text-center text-gray-600">Estude obras literárias clássicas.</p>
+            </article>
+        </a>        
+        <article class="p-4 border-2 border-blue-300 rounded-md shadow-md hover:shadow-lg transition-shadow">
+            <a href="./Chat/chat-edf.html" class="block">
+                <img src="https://w7.pngwing.com/pngs/946/786/png-transparent-physical-education-profissional-de-educacao-fisica-bachelor-s-degree-school-student-school-thumbnail.png" alt="Foto Redonda da Matéria" class="limited-img mx-auto mb-4">
+                <h3 class="rubik-uniquifier text-xl font-bold text-center mb-2">Educação Física</h3>
+                <p class="text-center text-gray-600">Aprenda a importância do exercício.</p>
+            </a>
+        </article>        
+        <a href="./Chat/chat-dire.html">
+            <article class="p-4 border-2 border-blue-300 rounded-md shadow-md hover:shadow-lg transition-shadow">
+                <img src="https://cdn.icon-icons.com/icons2/603/PNG/512/legal_law_justice_balance_court_judge_icon-icons.com_55992.png" alt="Foto Redonda da Matéria" class="limited-img mx-auto mb-4">
+                <h3 class="rubik-uniquifier text-xl font-bold text-center mb-2">Direito Básico</h3>
+                <p class="text-center text-gray-600">Aprenda sobre os seus direitos. Tudo sobre e sua Importancia</p>
+            </article>
+        </a>
+        
+        <a href="./Chat/chat-progr.html">
+            <article class="p-4 border-2 border-blue-300 rounded-md shadow-md hover:shadow-lg transition-shadow">
+                <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/363176-icone-do-de-programacao-gratis-vetor.jpg" alt="Foto Redonda da Matéria" class="limited-img mx-auto mb-4">
+                <h3 class="rubik-uniquifier text-xl font-bold text-center mb-2">Programação Básica</h3>
+                <p class="text-center text-gray-600">Aprenda os fundamentos da programação.</p>
+            </article>
+        </a>        
+        <a href="./Chat/chat-artes.html">
+            <article class="p-4 border-2 border-blue-300 rounded-md shadow-md hover:shadow-lg transition-shadow">
+                <img src="https://cdn.icon-icons.com/icons2/483/PNG/512/art-palette_47204.png" alt="Foto Redonda da Matéria" class="limited-img mx-auto mb-4">
+                <h3 class="rubik-uniquifier text-xl font-bold text-center mb-2">Arte e Cultura</h3>
+                <p class="text-center text-gray-600">Explore a diversidade cultural.</p>
+            </article>
+        </a>              
+    </section>
+</main>
+
+
+<footer class="text-center">
+    <p class="text-xs">&copy; by Edgar Supremo Lindo</p>
+</footer>
+</aside>
+
+<script>
+    // Função para abrir e fechar a janela de configurações
+    function toggleConfigWindow() {
+        const configWindow = document.getElementById('config-window');
+        configWindow.classList.toggle('hidden');
+    }
+
+    // Função para salvar as configurações do usuário
+    document.getElementById('config-form').addEventListener('submit', async function (event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+
+        const response = await fetch('/updateProfile', {
+            method: 'POST',
+            body: formData
+        });
+
+        if (response.ok) {
+            alert('Perfil atualizado com sucesso!');
+            toggleConfigWindow();
+            const updatedProfilePic = await response.json();
+            document.getElementById('profile-pic-display').src = updatedProfilePic.profile_pic;
+        } else {
+            alert('Erro ao atualizar o perfil.');
+        }
+    });
+
+    
+    async function loadUserProfile() {
+        const response = await fetch('/getProfile');
+        const user = await response.json();
+        document.getElementById('name').value = user.name;
+        document.getElementById('email').value = user.email;
+        document.getElementById('rua').value = user.rua;
+        document.getElementById('bairro').value = user.bairro;
+        document.getElementById('cidade').value = user.cidade;
+        document.getElementById('estado').value = user.estado;
+        document.getElementById('cep').value = user.cep;
+        document.getElementById('profile-pic-display').src = user.profile_pic;
+    }
+
+    
+    window.onload = loadUserProfile;
+
+    
+</script>
+</body>
+</html>
